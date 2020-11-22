@@ -64,4 +64,42 @@
       background-color: #17d6eb;
     }
   }
+
+  .map-popup {
+    font-family: "Nunito";
+    .leaflet-popup{
+      &-content-wrapper {
+        background: rgba(255,255,255,.8);
+        box-shadow: none;
+        border-radius: 20px;
+      }
+
+      &-content {
+        color: #0089a5;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 8px 12px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+          width: 40px;
+          height: 40px;
+          background: #15c3d6;
+          box-shadow: 17.3px 27.6px 41.5px rgba(23,142,166,.16);
+          border-radius: 12px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      &-tip-container {
+        display: none;
+      }
+    }
+  }
 }
