@@ -13,7 +13,6 @@ body, input, button, textarea {
   font: 600 18px "Nunito", sans-serif;
 }
 
-@import url(./pages/landing.scss);
-@import url(./pages/orphanages-map.scss);
-@import url(./pages/create-orphanage.scss);
-@import url(./pages/orphanage.scss);
+@import url(./_components.scss);
+
+@import url(./_pages.scss);
