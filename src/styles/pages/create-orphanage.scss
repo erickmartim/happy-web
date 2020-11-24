@@ -18,6 +18,12 @@ form.create-orphanage-form {
 
   overflow: hidden;
 
+  .leaflet-container {
+    margin-bottom: 40px;
+    border: solid 1px #D3E2E5;
+    border-radius: 20px;
+  }
+
   fieldset {
     border: 0;
 
@@ -76,15 +82,6 @@ form.create-orphanage-form {
       line-height: 28px;
     }
 
-    .new-image {
-      width: 100%;
-      height: 64px;
-      background: #F5F8FA;
-      border: 1px dashed #96D2F0;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
     .button-select {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -109,8 +106,44 @@ form.create-orphanage-form {
         &:last-child {
           border-radius: 0 20px 20px 0;
           border-left: 0;
+
+          &.active {
+            background: #FFBCD4;
+            color: #FF669D;
+            border-color: #FF669D;
+          }
         }
       }
+    }
+
+    .images-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 16px;
+    }
+
+    .grid-image {
+      object-fit: cover;
+      width: 100%;
+      height: 96px;
+      background: #F5F8FA;
+      border: 1px dashed #96D2F0;
+      border-radius: 20px;
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .new-image {
+      @extend .grid-image;
+      width: auto;
+      cursor: pointer;      
+    }
+
+    input[type=file] {
+      display: none;
     }
   }
 
