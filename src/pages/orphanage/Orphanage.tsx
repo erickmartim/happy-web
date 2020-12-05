@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { FiClock, FiInfo } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import { Map, Marker, TileLayer } from "react-leaflet";
 import { useParams } from 'react-router-dom';
 
-import Sidebar from "../components/Sidebar";
-import api from "../services/api";
-import mapIcon from "../utils/mapIcon";
+import SidebarComponent from "components/layout/SidebarComponent";
+import api from "services/api";
+import mapIcon from "utils/mapIcon";
+
+import 'styles/pages/orphanage.scss';
 
 interface Orphanage {
   id: number,
@@ -45,7 +48,7 @@ export default function Orphanage() {
   return (
     <div id="page-orphanage">
 
-      <Sidebar></Sidebar>
+      <SidebarComponent />
 
       <main>
         <div className="orphanage-details">
@@ -125,10 +128,10 @@ export default function Orphanage() {
               }
             </div>
 
-            {/*<button type="button" className="contact-button">
+            <button type="button" className="contact-button">
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
-            </button> */}
+            </button>
           </div>
         </div>
       </main>

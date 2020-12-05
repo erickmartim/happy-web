@@ -1,0 +1,22 @@
+$success-color: #37C77F;
+$warning-color: #FFF666;
+$error-color: #D6487B;
+
+// forms
+$forms-base-color: #5C8599;
+$forms-border-color: #D3E2E5;
+$forms-background-color: #F5F8FA;
+$forms-success-color: $success-color;
+$forms-success-color-disabled: rgba($success-color, 0.5);
+$forms-success-color-hover: darken($success-color, 5%);
+$forms-error-color: $error-color;
+
+//buttons
+$btn-primary: #FFF666;
+$btn-primary-hover: #96feff;
+
+$btn-secondary: #12D4E0;
+$btn-secondary-text: white;
+$btn-secondary-hover: #96FEFF;
+$btn-secondary-hover-text: #15C3D6;
+

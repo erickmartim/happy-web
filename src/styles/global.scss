@@ -13,6 +13,5 @@ body, input, button, textarea {
   font: 600 18px "Nunito", sans-serif;
 }
 
-@import url(./_components.scss);
-
-@import url(./_pages.scss);
+@import './colors';
+@import './components';

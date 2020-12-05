@@ -1,0 +1,17 @@
+@import '../colors';
+
+.happy-message {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  &--success {
+    background-color: $success-color;
+  }
+
+  &--error {
+    background-color: $error-color;
+  }
+}

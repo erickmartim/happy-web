@@ -1,12 +1,12 @@
 import React from 'react';
-import Routes from './routes'
+import AppRoutes from 'routes/app.routes'
 
 import 'leaflet/dist/leaflet.css';
 import './styles/global.scss';
 
 function App() {
   return (
-    <Routes />
+    <AppRoutes />
   );
 }
 

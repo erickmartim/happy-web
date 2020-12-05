@@ -1,0 +1,91 @@
+.btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .2s;
+  border-radius: 16px;
+  border: solid 2px;
+
+  font: 800 20px "Nunito", sans-serif;
+  line-height: auto;
+  padding: 14px 28px;
+  text-decoration: none;
+
+  transition: all .25s;
+
+  &[disabled] {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &-lg {
+    border-radius: 30px;
+  }
+
+  &-borderless {
+    border: none;
+    outline: none;
+  }
+
+  &-primary {
+    background-color:$btn-primary;
+    border-color: darken($btn-primary,10);
+
+    &:hover {
+      background-color: $btn-primary-hover;
+      border-color: darken($btn-primary-hover,10);
+    }
+  }
+
+  &-secondary {
+    background-color: $btn-secondary;
+    color: white;
+    border-color: darken($btn-secondary,5);
+
+    &:hover {
+      background-color:$btn-secondary-hover;
+      color: #15C3D6;
+      border-color: darken($btn-secondary-hover,5);
+    }
+  }
+
+  &-green {
+    background-color: $forms-success-color;
+    color: white;
+
+    &:hover {
+      background-color: $forms-success-color-hover;
+    }
+    &[disabled] {
+      background-color: $forms-success-color-disabled;
+    }
+  }
+
+  &-pink {
+    background-color: #D6487B;
+    color: white;
+
+    &:hover {
+      background-color: #FF8FB8;
+      color: #B9406B;
+    }
+  }
+
+  &-gray {
+    background-color: #EBF2F5;
+    color: #15C3D6;
+    
+    svg {
+      fill: #15C3D6;
+    }
+    &:hover {
+      background-color: #8FA7B2;
+      color: white;
+
+      svg {
+        fill: white;
+      }
+    }
+  }
+}

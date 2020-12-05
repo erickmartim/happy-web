@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { FiArrowRight, FiPlus } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import mapMarkerImg from '../images/MapMarker.svg';
+import mapMarkerImg from 'images/MapMarker.svg';
 
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import mapIcon from '../utils/mapIcon';
-import api from '../services/api';
+import mapIcon from 'utils/mapIcon';
+import api from 'services/api';
+
+import 'styles/pages/orphanages-map.scss';
 
 interface Orphanage {
   id: number,
@@ -27,7 +29,7 @@ function OrphanagesMap() {
     <div id="page-map">
       <aside>
         <header>
-          <img src={mapMarkerImg} alt="Happy" />
+          <Link to="/"><img src={mapMarkerImg} alt="Happy" /></Link>
 
           <h2>Escolha um orfanato no mapa</h2>
           <p>Muitas crianças estão esperando sua visita :)</p>

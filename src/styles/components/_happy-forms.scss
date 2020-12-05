@@ -1,0 +1,86 @@
+.happy-forms {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+
+  padding: 20px;
+
+  h1, p, label, a {
+    color: $forms-base-color;
+  }
+
+  h1 {
+    margin-bottom: 40px;
+    font-size: 32px;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+
+  a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #8FA7B2;
+
+    &:hover {
+      color: $forms-base-color;
+    }
+  }
+
+  &-block {
+    flex: 0 1 100%;
+    margin-bottom: 24px;
+
+    label {
+      display: flex;
+      color: #8FA7B3;
+      margin-bottom: 8px;
+      line-height: 24px;
+      font-size: 16px;
+
+      & input[type=checkbox], 
+      & input[type=radio] {
+        margin-right: 5px
+      }
+    }
+
+    input, textarea {
+      width: 100%;
+      background:$forms-background-color;
+      border: 1px solid $forms-border-color;
+      border-radius: 20px;
+      outline: none;
+      color: $forms-base-color;
+    }
+
+    input {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    textarea {
+      min-height: 120px;
+      max-height: 240px;
+      resize: vertical;
+      padding: 16px;
+      line-height: 28px;
+    }
+
+    &.inline-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &.action-block {
+      display: flex;
+
+      > * {
+        flex: 0 1 100%;
+      }
+    }
+  }
+}
