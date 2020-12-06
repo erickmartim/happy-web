@@ -7,6 +7,7 @@ import Orphanage from 'pages/orphanage/Orphanage';
 import CreateOrphanage from 'pages/orphanage/CreateOrphanage';
 
 import Login from 'pages/login/Index';
+import MessagesComponent from 'components/layout/MessagesComponent';
 
 export default function AppRoutes() {
   return (
@@ -20,6 +21,8 @@ export default function AppRoutes() {
 
         <Route path="/login" component={Login}></Route>
       </Switch>
+
+      <MessagesComponent />
     </BrowserRouter>
   );
 }

@@ -1,13 +1,29 @@
+import useMessages from 'common/hooks/useMessages';
 import React, { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function LoginFormComponent() {
+  const { addMessage, removeMessage } = useMessages();
   
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
+
+    addMessage({
+      type: "success",
+      title: "Titulo Teste",
+      text: "texto Teste",
+      action: (
+        <div>
+          <Link to="/app" className="btn btn-borderless" onClick={removeMessage}>Voltar ao Mapa</Link>
+          &nbsp;&nbsp;
+          <Link to="/login" className="btn btn-borderless" onClick={removeMessage}>Efetuar Login</Link>
+        </div>
+      )
+    });
   }
 
   return (
+    <div>
     <form className="happy-forms" onSubmit={handleSubmit}>
       <h1>Fazer Login</h1>
 
@@ -34,5 +50,6 @@ export default function LoginFormComponent() {
         <button type="submit" className="btn btn-green btn-borderless">Entrar</button>
       </div>
     </form>
+    </div>
   )
 }
