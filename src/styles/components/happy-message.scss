@@ -11,20 +11,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 9999;
+
+  transition: top .4s;
+
+  &-closed {
+    top: -100vh;
+  }
+  &-open { 
+    top: 0;
+  }
 
   &.success {
     background-color: $messages-success-background;
     #{$root}-container{
       background: url(../../images/SuccessIcon.svg) no-repeat 80% center;
     }
+  }
+
+  &.warning {
+    background-color: $messages-warning-background;
+    #{$root}-container{
+      background: url(../../images/ErrorIcon.svg) no-repeat 80% center;
+    }
 
     .btn {
-      background-color: $messages-success-btn;
+      background-color: $messages-warning-btn;
       color: white;
 
       &:hover {
-        background-color: $messages-success-btn-hover;
+        background-color: $messages-warning-btn-hover;
+        color: $messages-warning-btn-hover-text;
       }
     }
   }
@@ -51,6 +68,7 @@
     max-width: 1100px;
     height: 100%;
     max-height: 674px;
+    position: relative;
     
     display: flex;
     align-items: flex-start;
@@ -82,5 +100,19 @@
   
   a, .btn {
     display: inline;
+  }
+
+  .happy-message-close {
+    color: rgba(0,0,0,.35);
+    cursor: pointer;
+    position: absolute;
+    top: 12%;
+    right: 12%;
+
+    transition: color .2s;
+
+    &:hover {
+      color: white;
+    }
   }
 }

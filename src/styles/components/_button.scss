@@ -9,7 +9,7 @@
 
   font: 800 20px "Nunito", sans-serif;
   line-height: auto;
-  padding: 14px 28px;
+  padding: 14px;
   text-decoration: none;
 
   transition: all .25s;
@@ -26,6 +26,23 @@
   &-borderless {
     border: none;
     outline: none;
+  }
+
+  /* simple badged buttons need this class */
+  &.badge {
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-width: 2px;
+      right: 14px;
+      top: 12px;
+      border-radius: 50%;
+    }
   }
 
   &-primary {
@@ -47,6 +64,26 @@
       background-color:$btn-secondary-hover;
       color: #15C3D6;
       border-color: darken($btn-secondary-hover,5);
+    }
+  }
+
+  &-dark-blue {
+    background-color: #12AFCB;
+    color: white;
+
+    &:hover {
+      background-color: #17D6EB;
+    }
+    &.active, &.active:hover {
+      background-color: $btn-primary;
+      color: $btn-primary-text;
+    }
+
+    &.badge {
+      &:after {
+        background-color: $btn-primary;
+        border: solid 2px #12AFCB;
+      }
     }
   }
 
@@ -85,6 +122,25 @@
 
       svg {
         fill: white;
+      }
+    }
+
+    &-messages-success {
+      background-color: $messages-success-btn;
+      color: white;
+
+      &:hover {
+        background-color: $messages-success-btn-hover;
+      }
+    }
+
+    &-messages-error {
+      background-color: $messages-error-btn;
+      color: white;
+
+      &:hover {
+        background-color: $messages-error-btn-hover;
+        color: $messages-error-btn-hover-text;
       }
     }
   }

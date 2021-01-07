@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import ShortLocationComponent from 'components/layout/ShortLocationComponent';
+import ShortLocation from 'common/components/ShortLocation';
 
 import LogoDashboard from 'images/LogoDashboard.svg';
 import { FaArrowLeft } from 'react-icons/fa';
@@ -14,14 +14,14 @@ export default function Login() {
     <div id="page-login" className="page-login">
       <div className="login-splash">
         <img src={LogoDashboard} alt="Dashboard" />
-        <ShortLocationComponent />
+        <ShortLocation />
       </div>
       <div className="login-form-container">
         <div className="login-form">
           <LoginRoutes />
         </div>
 
-        <button onClick={history.goBack} className="btn btn-gray btn-borderless">
+        <button onClick={() => {history.push('/')}} className="btn btn-gray btn-borderless">
           <FaArrowLeft size={24} color="#15C3D6"/>
         </button>
       </div>

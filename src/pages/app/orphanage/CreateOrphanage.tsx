@@ -5,11 +5,11 @@ import { LeafletMouseEvent } from "leaflet";
 
 import { FiPlus } from "react-icons/fi";
 
-import SidebarComponent from "components/layout/SidebarComponent";
+import Sidebar from "common/components/Sidebar";
 import mapIcon from "utils/mapIcon";
 import api from "services/api";
 
-import 'styles/pages/create-orphanage.scss';
+import 'styles/pages/orphanages/create-orphanage.scss';
 
 export default function CreateOrphanage() {
   const history = useHistory();
@@ -76,7 +76,7 @@ export default function CreateOrphanage() {
 
   return (
     <div id="page-create-orphanage">
-      <SidebarComponent/>
+      <Sidebar/>
 
       <main>
         <form onSubmit={handleSubmit} className="create-orphanage-form">

@@ -1,0 +1,38 @@
+.orphanage {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #D3E2E5;
+
+  &-header {  
+    border-bottom: 1px solid #DDE3F0;   
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &-description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 24px;
+
+    h2 {
+      font-size: 24px;
+      color: #4D6F80;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    flex: 1 0 auto;
+
+    .btn + .btn {
+      margin-left: 8px;
+    }
+  }
+}

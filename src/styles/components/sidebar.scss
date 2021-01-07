@@ -1,4 +1,4 @@
-aside.app-sidebar {
+.app-sidebar {
   position: fixed;
   height: 100%;
   padding: 32px 24px;
@@ -13,27 +13,9 @@ aside.app-sidebar {
     width: 48px;
   }
 
-  footer {
-    a, button {
-      width: 48px;
-      height: 48px;
-    
-      border: 0;
-    
-      background: #12AFCB;
-      border-radius: 16px;
-    
-      cursor: pointer;
-    
-      transition: background-color 0.2s;
-    
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &:hover {
-        background: #17D6EB;
-      }
+  &-actions {
+    .btn + .btn {
+      margin-top: 8px;
     }
   }
 }

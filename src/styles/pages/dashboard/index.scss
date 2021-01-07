@@ -1,0 +1,52 @@
+.dashboard {
+  &-page{ 
+    max-width: 100vw;
+    min-height: 100vh;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content-wrapper {
+      width: 100%;
+      max-width: 1120px;
+      padding: 5vh 0;
+      
+      position: relative;
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding-bottom: 24px;
+    border-bottom: solid 1px #D3E2E5;
+    margin-bottom: 40px;
+
+    h1 {
+      color: #4D6F80;
+      font-size: 32px;
+    }
+
+    span {
+      color: #8FA7B2;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+
+  &-content {
+    .orfanatos-lista {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(544px, 1fr));
+      justify-items: end;
+      /* This is better for small screens, once min() is better supported */
+      /*grid-template-columns: repeat(auto-fill, minmax(min(544px, 100%), 1fr));*/
+      grid-gap: 32px;
+      /* This is the standardized property now, but has slightly less support */
+      /* gap: 1rem */
+    }
+  }
+}

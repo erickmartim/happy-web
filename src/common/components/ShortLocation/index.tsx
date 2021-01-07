@@ -6,7 +6,7 @@ interface ShortLocationProps {
   textAlign?: string;
 }
 
-export default function ShortLocationComponent(props: any) {
+export default function ShortLocation(props: any) {
 
   const ShortLocationProps = props as ShortLocationProps;
   const className = ShortLocationProps?.textAlign ? `text-${ShortLocationProps?.textAlign}` : '';

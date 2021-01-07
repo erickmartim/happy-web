@@ -1,30 +1,34 @@
-import useMessages from 'common/hooks/useMessages';
+//import useMessages from 'common/hooks/useMessages';
+import useAuth from 'common/hooks/useAuth';
 import React, { FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 export default function LoginFormComponent() {
-  const { addMessage, removeMessage } = useMessages();
+  //const { addMessage, removeMessage } = useMessages();
+  const {signed, signIn, user} = useAuth();
+  const history = useHistory();
   
-  function handleSubmit(event: FormEvent) {
+  async function handleSignIn(event: FormEvent) {
     event.preventDefault();
+    await signIn();
 
-    addMessage({
+    history.push('dashboard');
+
+    /*addMessage({
       type: "success",
-      title: "Titulo Teste",
-      text: "texto Teste",
+      title: "Titulo i9xp",
+      text: "texto i9xp",
       action: (
         <div>
-          <Link to="/app" className="btn btn-borderless" onClick={removeMessage}>Voltar ao Mapa</Link>
-          &nbsp;&nbsp;
-          <Link to="/login" className="btn btn-borderless" onClick={removeMessage}>Efetuar Login</Link>
+          <Link to="/app" className="btn btn-messages-success btn-borderless" onClick={removeMessage}>Voltar ao Mapa</Link>
         </div>
       )
-    });
+    });*/
   }
 
   return (
     <div>
-    <form className="happy-forms" onSubmit={handleSubmit}>
+    <form className="happy-forms" onSubmit={handleSignIn}>
       <h1>Fazer Login</h1>
 
       <div className="happy-forms-block">

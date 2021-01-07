@@ -1,15 +1,18 @@
 import React from 'react';
-import AppRoutes from 'routes/app.routes'
+import MessagesProvider from 'common/providers/MessagesProvider';
+import { AuthProvider } from 'common/providers/AuthProvider';
+import AppRoutes from 'routes/app.routes';
 
 import 'leaflet/dist/leaflet.css';
 import 'styles/global.scss';
-import MessagesProvider from 'common/providers/MessagesProvider';
 
 function App() {
   return (
+    <AuthProvider>
     <MessagesProvider>
       <AppRoutes />
     </MessagesProvider>
+    </AuthProvider>
   );
 }
 

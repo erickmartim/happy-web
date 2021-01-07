@@ -1,33 +1,44 @@
 import React, { useCallback, useState } from 'react';
 
 interface MessagesProps {
-  type: string;
-  title: string;
-  text: string;
+  message: MessagesDataProps | null;
+  isOpen: boolean;
+  addMessage(messageObject:MessagesDataProps): void;
+  removeMessage(): any;
+}
+interface MessagesDataProps {
+  type?: string;
+  title?: string;
+  text?: string;
   action?: object;
   timeout?: number;
 }
 
-export const MessagesContext = React.createContext({
-  message: {
-    type: 'success',
-    title: 'Titulo',
-    text: 'Texto'
-  } as MessagesProps,
-  addMessage: (messageObject: MessagesProps) => {},
-  removeMessage: () => {}
-});
+export const MessagesContext = React.createContext({} as MessagesProps);
 
 export default function MessagesProvider({ children }: any) {
-  const [message, setMessage] = useState<MessagesProps>({} as MessagesProps);
+  const [message, setMessage] = useState<MessagesDataProps | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const removeMessage = () => { setMessage({} as MessagesProps) };
+  function addMessage(messageObject: MessagesDataProps) { 
+    setMessage(messageObject);
+    setIsOpen(true);
+  };
 
-  const addMessage = (messageObject: MessagesProps) => { setMessage(messageObject) }
+  async function removeMessage() {
+    setIsOpen(false);
+    await new Promise(resolve => {
+      setTimeout(() => {
+        resolve({})
+      }, 400);
+    });
+    setMessage(null);
+  }
 
   const contextValue = {
+    isOpen,
     message,
-    addMessage: useCallback((messageObject: MessagesProps) => addMessage(messageObject), []),
+    addMessage: useCallback((messageObject: MessagesDataProps) => { addMessage(messageObject) }, []),
     removeMessage: useCallback(() => removeMessage(), []),
   }
 

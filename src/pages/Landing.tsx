@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import ShortLocationComponent from 'components/layout/ShortLocationComponent';
+import ShortLocation from 'common/components/ShortLocation';
 
 import logoImg from 'images/Logo.svg';
 import 'styles/pages/landing.scss';
@@ -13,7 +13,7 @@ function Landing() {
         <div className="page-landing-header">
           <img src={logoImg} alt="Happy"/>
 
-          <ShortLocationComponent textAlign="left" />
+          <ShortLocation textAlign="left" />
 
           <Link to="/login" className="btn btn-secondary btn-borderless btn-login">
             Acesso Restrito
